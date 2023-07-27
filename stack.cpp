@@ -44,12 +44,34 @@ class Stack{
 
 
 int main(){
-    int n;
-    cin >>n;
     Stack s;
-    while(n--){
-        int x;
-        cin >> x;
-        s.push(x);
+    string eqn;
+    while(getline(cin,eqn,' ')){
+        if(!eqn.compare("+")){
+            int y = s.pop();
+            int x = s.pop();
+            int z = x+y;
+            s.push(x+y);
+        }else if(!eqn.compare("-")){
+            int y = s.pop();
+            int x = s.pop();
+            s.push(x-y);            
+        }else if(!eqn.compare("/")){
+            int y = s.pop();
+            int x = s.pop();
+            s.push(x/y);
+        }else if(!eqn.compare("*")){
+            int y = s.pop();
+            int x = s.pop();
+            s.push(x*y);
+        }else if(!eqn.compare("%")){
+            int y = s.pop();
+            int x = s.pop();
+            s.push(x%y);
+        }else{
+            int x = stoi(eqn);
+            s.push(x);
+        }
     }
+    cout<<s.pop();
 }
