@@ -61,11 +61,36 @@ public:
     }
 };
 
+vector<string> split_string(string s, char c)
+{
+    vector<string> str;
+    string word = "";
+    for (int i = 0; i <= s.size(); i++)
+    {
+        if (i == s.size())
+        {
+            str.push_back(word);
+            return str;
+        }
+        if (s[i] == c)
+        {
+            str.push_back(word);
+            word = "";
+        }
+        else
+        {
+            word = word + s[i];
+        }
+    }
+}
+
 int main()
 {
     Stack s;
-    string eqn;
-    while (getline(cin, eqn, ' '))
+    string equation;
+    getline(cin, equation);
+    vector<string> tokenised_eqn = split_string(equation, ' ');
+    for (string eqn : tokenised_eqn)
     {
         // here getline function takes the inputs
         // from console till it gets a space
@@ -75,12 +100,17 @@ int main()
         // if it is not an operator then it
         // converts string eqn to an integer
         // and stores it in the stack
+
         if (!eqn.compare("+"))
         {
             int y = s.pop();
             int x = s.pop();
             int z = x + y;
             s.push(x + y);
+        }
+        else if (!eqn.compare(""))
+        {
+            cout << "jo";
         }
         else if (!eqn.compare("-"))
         {
