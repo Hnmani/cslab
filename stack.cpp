@@ -1,77 +1,118 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class node{
-    public:
+class node
+{
+public:
     int data;
-    node* next;
-    node(int x) {
+    node *next;
+    node(int x)
+    {
         data = x;
+        next = NULL;
     }
 };
 
-class Stack{
-    node* top;
-    public:
-    Stack(){
+class Stack
+{
+    node *top;
+
+public:
+    Stack()
+    {
         top = NULL;
     }
-    int show_top() {return top->data;}
-    void push(int x){
-        node* temp = new node(x);
-        if(top){
+    int show_top() { return top->data; }
+    void push(int x)
+    {
+        /*
+            the push function creates a new node and
+            initializes it with value x which is an
+            integer and is passed to it as an argument.
+            then it checks wheter there is a top element
+            in the stack or not i.e. whether the stack is not empty
+            if it is empty it sets top as new node's next
+            finally it sets new node as top
+        */
+        node *temp = new node(x);
+        if (top)
+        {
             temp->next = top;
-            top = temp;
         }
-        else{
-            temp->next = NULL;
-            top = temp;
-        }
+        top = temp;
     }
 
-    int pop(){
+    int pop()
+    {
         int x = top->data;
-        if(top->next){
-            node* temp = top;
+        // returns the data of the top node
+        // also deletes the top node
+        if (top->next)
+        {
+            node *temp = top;
             top = top->next;
-            free(temp);  
-        }else{
+            free(temp);
+        }
+        else
+        {
             free(top);
         }
         return x;
     }
 };
 
-
-int main(){
+int main()
+{
     Stack s;
     string eqn;
-    while(getline(cin,eqn,' ')){
-        if(!eqn.compare("+")){
+    while (getline(cin, eqn, ' '))
+    {
+        // here getline function takes the inputs
+        // from console till it gets a space
+        // storing the string with name eqn the program compares it
+        // with the operator + - * / % and
+        // then it perform action accodingly
+        // if it is not an operator then it
+        // converts string eqn to an integer
+        // and stores it in the stack
+        if (!eqn.compare("+"))
+        {
             int y = s.pop();
             int x = s.pop();
-            int z = x+y;
-            s.push(x+y);
-        }else if(!eqn.compare("-")){
+            int z = x + y;
+            s.push(x + y);
+        }
+        else if (!eqn.compare("-"))
+        {
             int y = s.pop();
             int x = s.pop();
-            s.push(x-y);            
-        }else if(!eqn.compare("/")){
+            s.push(x - y);
+        }
+        else if (!eqn.compare("/"))
+        {
             int y = s.pop();
             int x = s.pop();
-            s.push(x/y);
-        }else if(!eqn.compare("*")){
+            s.push(x / y);
+        }
+        else if (!eqn.compare("*"))
+        {
             int y = s.pop();
             int x = s.pop();
-            s.push(x*y);
-        }else if(!eqn.compare("%")){
+            s.push(x * y);
+        }
+        else if (!eqn.compare("%"))
+        {
             int y = s.pop();
             int x = s.pop();
-            s.push(x%y);
-        }else{
+            s.push(x % y);
+        }
+        else
+        {
             int x = stoi(eqn);
             s.push(x);
         }
     }
-    cout<<s.pop();
+    // finally only one element remains in
+    // the stack which is out desired output
+    cout << s.pop();
 }
