@@ -63,6 +63,12 @@ public:
 
 vector<string> split_string(string s, char c)
 {
+    /*
+        split_string takes a string and a char as an argument
+        which returns vector of strings split from sting s
+        on the basis of
+        the char passed as argument in the function
+    */
     vector<string> str;
     string word = "";
     for (int i = 0; i <= s.size(); i++)
@@ -92,8 +98,6 @@ int main()
     vector<string> tokenised_eqn = split_string(equation, ' ');
     for (string eqn : tokenised_eqn)
     {
-        // here getline function takes the inputs
-        // from console till it gets a space
         // storing the string with name eqn the program compares it
         // with the operator + - * / % and
         // then it perform action accodingly
