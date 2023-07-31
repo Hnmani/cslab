@@ -8,13 +8,14 @@ bool cmp(pair<string, pair<float, string>> &a, pair<string, pair<float, string>>
         it defines the order in which it has to be sorted;
         first it is compared on the basis of name ( *.second.second)
         then on the basis of cgpa (*.second.first)[only if name are same]
+        (one with more cgpa will be displayed earlier)
         finally on the basis of roll[only if both name and cgpa are same].
     */
     if (a.second.second < b.second.second)
         return true;
     else if (a.second.second == b.second.second)
     {
-        if (a.second.first < b.second.first)
+        if (a.second.first > b.second.first)
             return true;
         else if (a.second.first == b.second.first)
         {
