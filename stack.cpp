@@ -112,10 +112,6 @@ int main()
             int z = x + y;
             s.push(x + y);
         }
-        else if (!eqn.compare(""))
-        {
-            cout << "jo";
-        }
         else if (!eqn.compare("-"))
         {
             int y = s.pop();
