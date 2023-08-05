@@ -25,15 +25,6 @@ int main()
         int k, l, w;
         std::cin >> k >> l >> arr[k - 1][l - 1];
     }
-
-    // for (int i = 0; i < n; i++)
-    // {
-    //     for (int j = 0; j < n; j++)
-    //     {
-    //         std::cout << arr[i][j] << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
     std::cin >> s >> d;
     std::vector<int> dist(n, INT_MAX);
     std::vector<int> frm(n, -1);
@@ -59,20 +50,26 @@ int main()
         }
     }
     std::vector<int> path;
+
+    // print output
     if (frm[d - 1] != -1)
     {
         std::cout << dist[d - 1] << std::endl;
         record_path(frm, d - 1, path);
-        for (auto x : path)
+        std::cout << "The path with the smallest product of edges will be:";
+        for (int i = 0; i < path.size() - 1; i++)
         {
-            std::cout << x << " ";
+            std::cout << path[i] << " => ";
         }
-        for (auto x : path)
+        std::cout << path[path.size() - 1] << std::endl;
+        std::cout << "with the product as :";
+        for (int i = 1; i < path.size() - 1; i++)
         {
-            std::cout << x << " ";
+            int p = path[i - 1] - 1;
+            int c = path[i] - 1;
+            std::cout << arr[p][c] << " * ";
         }
-        // std::cout << s1.first << d << std::endl;
-        // std::cout << s1.second << std::endl;
+        std::cout << arr[path[path.size() - 2] - 1][path[path.size() - 1] - 1] << " = " << dist[d - 1] << std::endl;
     }
 
     else
