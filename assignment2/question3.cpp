@@ -20,7 +20,7 @@ int main()
 {
     int n, r, total_cost = 0;
     std::cin >> n >> r;
-    std::unordered_set<int> cool;
+    std::vector<bool> cool(n + 1, false);
     std::priority_queue<edge, std::vector<edge>, std::greater<edge>> pq;
     for (int i = 0; i < r; i++)
     {
@@ -32,15 +32,13 @@ int main()
     for (int i = 0; i < r; i++)
     {
         edge t = pq.top();
-        if (cool.find(t.node1) == cool.end() || cool.find(t.node2) == cool.end())
+        if (!cool[t.node1] || !cool[t.node2])
         {
             total_cost += t.weight;
-            cool.insert(t.node1);
-            cool.insert(t.node2);
+            cool[t.node1] = true;
+            cool[t.node2] = true;
         }
         pq.pop();
-        // if (cool.size() == n)
-        //     break;
     }
     std::cout << total_cost;
 }
