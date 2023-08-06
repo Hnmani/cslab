@@ -43,7 +43,7 @@ public:
     node *rotate_rr(node *t)
     {
         node *i = t->right;
-        t->right = i->right;
+        t->right = i->left;
         i->left = t;
         return i;
     }
@@ -92,9 +92,9 @@ public:
         }
         else
         {
-            if (t->data > x)
+            // std::cout << t->data << " " << x << std::endl;
+            if (x < t->data)
             {
-                // std::cout << t->data << " " << x << std::endl;
                 t->left = insert(t->left, x);
                 t = balance(t);
             }
@@ -107,15 +107,18 @@ public:
         }
     }
 
+    node *erase(node *t, int x)
+    {
+
+        return t;
+    }
     void inorder(node *t)
     {
         if (t == NULL)
             return;
-        if (t->left)
-            inorder(t->left);
+        inorder(t->left);
         std::cout << t->data << " ";
-        if (t->right)
-            inorder(t->right);
+        inorder(t->right);
     }
 };
 
@@ -132,4 +135,5 @@ int main()
         p = a.insert(p, x);
     }
     a.inorder(p);
+    // std::cout << p->left->right->data;
 }
