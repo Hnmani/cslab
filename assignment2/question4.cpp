@@ -15,9 +15,11 @@ int main()
         t = a.insert(t, x);
     }
     a.inorder(t, t);
-    a.show_closest_pair();
-    t = a.push(t, 4);
-    a.show_closest_pair();
-    t = a.pop(t, 4);
-    a.show_closest_pair();
+    a.h.show();
+    std::cout << "====" << std::endl;
+    t = a.pop(t, 7);
+    a.h.show();
+    std::cout << "====" << std::endl;
+    t = a.pop(t, 2);
+    a.h.show();
 }

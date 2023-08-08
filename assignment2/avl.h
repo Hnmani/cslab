@@ -252,6 +252,7 @@ public:
         int n1 = h.get_node(p.first)->node1;
         int n2 = h.get_node(p.second)->node2;
         h.delete_from_heap(p.first);
+        p = h.get_node_from_heapMap(x);
         h.delete_from_heap(p.second);
         minheap_node *m1 = new minheap_node(abs(n1 - n2), n1, n2);
         h.insert(m1);
