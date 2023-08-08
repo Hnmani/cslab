@@ -95,8 +95,6 @@ public:
     }
     void pop_top()
     {
-        mp[v[0]->node1].second = -1;
-        mp[v[0]->node2].first = -1;
         v[0] = v[v.size() - 1];
         mp[v[0]->node1].second = 0;
         mp[v[0]->node2].first = 0;
@@ -112,6 +110,7 @@ public:
     }
     void delete_from_heap(int i)
     {
+
         v[i]->diff = INT_MIN;
         heapifyUp(i);
         pop_top();
