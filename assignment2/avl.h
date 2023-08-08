@@ -237,7 +237,8 @@ public:
             m1 = new minheap_node(abs(pre->data - x), pre->data, x);
         if (suc)
             m2 = new minheap_node(abs(suc->data - x), x, suc->data);
-        h.delete_from_heap(h.get_node_from_heapMap(pre->data).second);
+        if (pre && suc)
+            h.delete_from_heap(h.get_node_from_heapMap(pre->data).second);
         if (m1)
             h.insert(m1);
         if (m2)
@@ -247,15 +248,20 @@ public:
 
     node *pop(node *t, int x)
     {
-        t = erase(t, x);
+        node *pre = NULL, *suc = NULL;
+        findPreSuc(t, pre, suc, x);
         std::pair<int, int> p = h.get_node_from_heapMap(x);
         int n1 = h.get_node(p.first)->node1;
         int n2 = h.get_node(p.second)->node2;
-        h.delete_from_heap(p.first);
-        p = h.get_node_from_heapMap(x);
-        h.delete_from_heap(p.second);
         minheap_node *m1 = new minheap_node(abs(n1 - n2), n1, n2);
-        h.insert(m1);
+        if (pre)
+            h.delete_from_heap(h.get_node_from_heapMap(pre->data).second);
+        if (suc)
+            h.delete_from_heap(h.get_node_from_heapMap(suc->data).first);
+        if (pre && suc)
+            h.insert(m1);
+
+        t = erase(t, x);
         return t;
     }
 

@@ -18,8 +18,10 @@ int main()
     a.h.show();
     std::cout << "====" << std::endl;
     t = a.pop(t, 7);
-    a.h.show();
-    std::cout << "====" << std::endl;
     t = a.pop(t, 2);
+    t = a.pop(t, 13);
+    t = a.pop(t, 5);
+    // t = a.push(t, 10);
+    // t = a.pop(t, 11);
     a.h.show();
 }
