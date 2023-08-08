@@ -10,9 +10,9 @@ struct node
 
 class avl
 {
-public:
     minheap h;
 
+public:
     int height(node *t)
     {
         int h = 0;
@@ -268,6 +268,6 @@ public:
     void show_closest_pair()
     {
         minheap_node *m = h.top();
-        std::cout << m->diff << " " << m->node1 << " " << m->node2 << std::endl;
+        std::cout << "<< " << m->node1 << " " << m->node2 << " >> and their difference is << " << m->diff << " >> " << std::endl;
     }
 };
