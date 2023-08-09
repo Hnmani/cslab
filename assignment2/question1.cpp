@@ -27,7 +27,7 @@ int main()
     }
     std::cin >> s >> d;
     std::vector<int> dist(n, INT_MAX);
-    std::vector<int> frm(n, -1);
+    std::vector<int> parents(n, -1);
     std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> pq;
 
     dist[s - 1] = 1;
@@ -43,7 +43,7 @@ int main()
                 if (dist[u] * arr[u][i] < dist[i])
                 {
                     dist[i] = dist[u] * arr[u][i];
-                    frm[i] = u;
+                    parents[i] = u;
                     pq.push(std::make_pair(dist[i], i));
                 }
             }
@@ -52,10 +52,10 @@ int main()
     std::vector<int> path;
 
     // print output
-    if (frm[d - 1] != -1)
+    if (parents[d - 1] != -1)
     {
         std::cout << dist[d - 1] << std::endl;
-        record_path(frm, d - 1, path);
+        record_path(parents, d - 1, path);
         std::cout << "The path with the smallest product of edges will be:";
         for (int i = 0; i < path.size() - 1; i++)
         {
@@ -73,5 +73,5 @@ int main()
     }
 
     else
-        std::cout << -1;
+        std::cout << -1 << std::endl;
 }
