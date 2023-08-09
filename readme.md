@@ -40,3 +40,73 @@ This Repo Contains the Solutions for CSLAB Assignments(CS6P001)[Computer Systems
     operands and the operators +, -, *, /, and %.<br>
   </li>
 </ul>
+
+<h2>Assignment 2</h2>
+<ul>
+  <li>
+    Given a directed graph with N nodes and E edges where the weight of each of the
+edges is greater than one, also given a source S and a destination D. Write a program
+to find the path with the minimum product of edges from S to D. If there is no path
+from S to D then print -1. (10 Marks)<br>
+Input: N = 3, E = 3, Edges = {{{1, 2}, 5}, {{1, 3}, 9}, {{2, 3}, 1}}, S = 1, and D = 3<br>
+Output: 5<br>
+The path with the smallest product of edges will be 1->2->3
+with the product as 5*1 = 5.<br>
+Input: N = 3, E = 3, Edges = {{{3, 2}, 5}, {{3, 3}, 9}, {{3, 3}, 1}}, S = 1, and D = 3<br>
+Output: -1<br>
+  </li>
+  <li>
+    Consider the task of multiplying two integer matrices A and B, each of size 500 × 500.
+Each matrix can have at most 500 non-zero entries. Any row of A or B that contains at
+least one non-zero element must have no less than 50 non-zero elements. (10 Marks)<br>
+(a) Propose a space-efficient data structure for this task.<br>
+(b) Based on your proposed data structure, design an efficient algorithm to multiply
+A and B. The resulting matrix should be stored separately.<br>
+(c) What is the maximum number of integer multiplications needed to complete this
+task as per your implementation?<br>
+  </li>
+  <li>
+    The houses in a village are connected by dirt roads. The panchayat of the village
+wanted to plan the paving of proper roads to make travel easy for villagers. They had
+two requirements:<br>
+● Enough roads must be paved so that it is possible for everyone to travel from
+their house to anyone else's house only along paved roads, and <br>
+● The paving should cost as little as possible. The houses are numbered from 0
+to n-1, and the number of dirt roads is m, where each dirt road connects any
+2 houses.<br>
+The input should be in the following format:<br>
+➢ 1. n //no of houses<br>
+➢ 2. m //no of dirt roads<br>
+➢ 3. 2D array of size m x 3<br>
+
+where every row of the 2D array describes a dirt road; in every row, the first 2
+elements represent the house number that the road connects, and the 3rd element
+represents the cost of building that road.
+The output should be the expense required to build the roads that satisfy the above
+requirements. (10 Marks)<br>
+Input:<br>
+5 6 <br>
+1 2 6<br>
+2 3 5<br>
+3 4 4<br>
+1 4 1<br>
+1 3 2<br>
+3 5 3<br>
+Output:
+11
+  </li>
+  <li>
+    Let S = {x1, x2, . . .xn
+} be a set of n integers. A pair (xi, xj ) (where i ≠ j) is said to be the
+closest pair if |xi-xj | ≤ |xi’-xj’|, for all possible pairs (xi’, xj’), i′, j′ = 1, 2, . . . , n, i′ ≠ j′. (10Marks)<br>
+(a) Describe a method for finding the closest pair among the set of integers in
+S using O(n log2 n) comparisons.<br>
+(b) Now suggest an appropriate data structure for storing the elements in S
+such that if a new element is inserted into the set S or an already existing
+element is deleted from the set S, the current closest pair can be reported in
+O(log2 n) time.<br>
+(c) Briefly explain the method of computing the current closest pair and the
+necessary modification of the data structure after each update. Justify the
+time complexity.<br>
+  </li>
+</ul>
