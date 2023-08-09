@@ -26,7 +26,6 @@ int main()
         std::cout << "0 - Exit" << std::endl;
         std::cout << "1 - Insert Element" << std::endl;
         std::cout << "2 - Delete an Element" << std::endl;
-        std::cout << "======================" << std::endl;
 
         std::cin >> ch;
         if (ch == 1)
@@ -47,7 +46,7 @@ int main()
             std::cin >> num;
             t = a.pop(t, num);
             std::cout << "The Entered number is " << num << std::endl;
-            std::cout << "After Inserting " << num << "the updated closest pair is ";
+            std::cout << "After Deleting " << num << " the updated closest pair is ";
             a.show_closest_pair();
             std::cout << std::endl;
         }

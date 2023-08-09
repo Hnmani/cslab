@@ -40,5 +40,5 @@ int main()
         }
         pq.pop();
     }
-    std::cout << total_cost;
+    std::cout << total_cost << std::endl;
 }
