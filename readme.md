@@ -69,11 +69,13 @@ task as per your implementation?<br>
     The houses in a village are connected by dirt roads. The panchayat of the village
 wanted to plan the paving of proper roads to make travel easy for villagers. They had
 two requirements:<br>
-● Enough roads must be paved so that it is possible for everyone to travel from
-their house to anyone else's house only along paved roads, and <br>
-● The paving should cost as little as possible. The houses are numbered from 0
+<ul>
+<li>Enough roads must be paved so that it is possible for everyone to travel from
+their house to anyone else's house only along paved roads, and </li>
+<li>The paving should cost as little as possible. The houses are numbered from 0
 to n-1, and the number of dirt roads is m, where each dirt road connects any
-2 houses.<br>
+2 houses.</li>
+</ul>
 The input should be in the following format:<br>
 ➢ 1. n //no of houses<br>
 ➢ 2. m //no of dirt roads<br>
