@@ -47,15 +47,53 @@ public:
         else
             top = t;
     }
+    // void in(node *t, std::vector<int> &preorder, std::vector<int> &inorder, std::vector<int> &postorder)
+    // {
+    //     if (!t)
+    //         return;
+    //     preorder.push_back(t->data);
+    //     in(t->left, preorder, inorder, postorder);
+    //     inorder.push_back(t->data);
+    //     in(t->right, preorder, inorder, postorder);
+    //     postorder.push_back(t->data);
+    // }
     void in(node *t, std::vector<int> &preorder, std::vector<int> &inorder, std::vector<int> &postorder)
     {
-        if (!t)
-            return;
-        preorder.push_back(t->data);
-        in(t->left, preorder, inorder, postorder);
-        inorder.push_back(t->data);
-        in(t->right, preorder, inorder, postorder);
-        postorder.push_back(t->data);
+        std::stack<node *> s;
+        s.push(t);
+        bool flg = true;
+        while (!s.empty())
+        {
+            node *tp = s.top();
+            if (flg)
+            {
+                int x = s.top()->data;
+                preorder.push_back(x);
+                if (tp->left)
+                {
+                    s.push(tp->left);
+                }
+                else
+                {
+                    flg = false;
+                }
+            }
+            else
+            {
+                int x = s.top()->data;
+                s.pop();
+                inorder.push_back(x);
+                if (tp->right)
+                {
+                    s.push(t->right);
+                    flg = false;
+                }
+                else
+                {
+                    s.pop();
+                }
+            }
+        }
     }
     void traverse()
     {
