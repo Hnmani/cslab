@@ -5,6 +5,8 @@ struct node
     int data;
     node *left;
     node *right;
+    bool lt = false;
+    bool rt = false;
 
 public:
     node(int x) : data(x), left(NULL), right(NULL){};
@@ -61,40 +63,7 @@ public:
     {
         std::stack<node *> s;
         s.push(t);
-        bool flg = true;
-        while (!s.empty())
-        {
-            node *tp = s.top();
-            if (flg)
-            {
-                int x = s.top()->data;
-                preorder.push_back(x);
-                if (tp->left)
-                {
-                    s.push(tp->left);
-                }
-                else
-                {
-                    flg = false;
-                }
-            }
-            else
-            {
-                int x = s.top()->data;
-                s.pop();
-                inorder.push_back(x);
-                if (tp->right)
-                {
-                    s.push(t->right);
-                    flg = false;
-                }
-                else
-                {
-                    s.pop();
-                }
-            }
         }
-    }
     void traverse()
     {
         std::vector<int> preorder;
