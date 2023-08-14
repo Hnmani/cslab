@@ -63,7 +63,34 @@ public:
     {
         std::stack<node *> s;
         s.push(t);
+        while (!s.empty())
+        {
+            node *temp = s.top();
+            if (!(temp->lt))
+            {
+                if (temp->left)
+                {
+                    s.push(temp->left);
+                }
+                temp->lt = true;
+                preorder.push_back(temp->data);
+            }
+            else if (!(temp->rt))
+            {
+                if (temp->right)
+                {
+                    s.push(temp->right);
+                }
+                inorder.push_back(temp->data);
+                temp->rt = true;
+            }
+            else
+            {
+                s.pop();
+                postorder.push_back(temp->data);
+            }
         }
+    }
     void traverse()
     {
         std::vector<int> preorder;
