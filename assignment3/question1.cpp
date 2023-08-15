@@ -16,48 +16,6 @@ class BT
 {
 
 public:
-    // void insert(node *t)
-    // {
-    //     if (top)
-    //     {
-    //         node *temp = top;
-    //         while (temp)
-    //         {
-    //             if (temp->data > t->data)
-    //             {
-    //                 if (temp->left)
-    //                     temp = temp->left;
-    //                 else
-    //                 {
-    //                     temp->left = t;
-    //                     break;
-    //                 }
-    //             }
-    //             else
-    //             {
-    //                 if (temp->right)
-    //                     temp = temp->right;
-    //                 else
-    //                 {
-    //                     temp->right = t;
-    //                     break;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     else
-    //         top = t;
-    // }
-    // void in(node *t, std::vector<int> &preorder, std::vector<int> &inorder, std::vector<int> &postorder)
-    // {
-    //     if (!t)
-    //         return;
-    //     preorder.push_back(t->data);
-    //     in(t->left, preorder, inorder, postorder);
-    //     inorder.push_back(t->data);
-    //     in(t->right, preorder, inorder, postorder);
-    //     postorder.push_back(t->data);
-    // }
     void in(node *t, std::vector<int> &preorder, std::vector<int> &inorder, std::vector<int> &postorder)
     {
         std::stack<node *> s;
@@ -86,6 +44,8 @@ public:
             else
             {
                 s.pop();
+                temp->lt = false;
+                temp->rt = false;
                 postorder.push_back(temp->data);
             }
         }

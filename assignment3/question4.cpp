@@ -51,7 +51,7 @@ int searchRotatedSortedArray(const std::vector<int> &nums, int target)
 int main()
 {
     std::vector<int> nums = {4, 5, 6, 7, 0, 1, 2};
-    int target = 4;
+    int target = 0;
     int result = searchRotatedSortedArray(nums, target);
 
     if (result != -1)
@@ -60,7 +60,7 @@ int main()
     }
     else
     {
-        std::cout << "Target not found." << std::endl;
+        std::cout << "Target not found." << result << std::endl;
     }
 
     return 0;
