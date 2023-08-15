@@ -23,16 +23,11 @@ public:
         {
             int left_height = height(t->left);
             int right_height = height(t->right);
-            if (left_height == right_height)
-            {
-                if (left_height == -1)
-                    return 0;
-            }
             int height = std::max(left_height, right_height) + 1;
             return height;
         }
     }
-    int get_diameter(node *t)
+    int get_longest_path_including_the_node(node *t)
     {
         int hleft = height(t->left);
         int hright = height(t->right);
@@ -43,13 +38,12 @@ public:
         if (t == NULL)
             return;
         update_max_diameter(t->left);
-        if (maximum < get_diameter(t))
-            maximum = get_diameter(t);
+        if (maximum < get_longest_path_including_the_node(t))
+            maximum = get_longest_path_including_the_node(t);
         update_max_diameter(t->right);
     }
     int get_max_diameter()
     {
-        // update_max_diameter(top);
         return maximum;
     }
 };
