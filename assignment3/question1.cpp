@@ -14,41 +14,40 @@ public:
 
 class BT
 {
-    node *top = NULL;
 
 public:
-    void insert(node *t)
-    {
-        if (top)
-        {
-            node *temp = top;
-            while (temp)
-            {
-                if (temp->data > t->data)
-                {
-                    if (temp->left)
-                        temp = temp->left;
-                    else
-                    {
-                        temp->left = t;
-                        break;
-                    }
-                }
-                else
-                {
-                    if (temp->right)
-                        temp = temp->right;
-                    else
-                    {
-                        temp->right = t;
-                        break;
-                    }
-                }
-            }
-        }
-        else
-            top = t;
-    }
+    // void insert(node *t)
+    // {
+    //     if (top)
+    //     {
+    //         node *temp = top;
+    //         while (temp)
+    //         {
+    //             if (temp->data > t->data)
+    //             {
+    //                 if (temp->left)
+    //                     temp = temp->left;
+    //                 else
+    //                 {
+    //                     temp->left = t;
+    //                     break;
+    //                 }
+    //             }
+    //             else
+    //             {
+    //                 if (temp->right)
+    //                     temp = temp->right;
+    //                 else
+    //                 {
+    //                     temp->right = t;
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     else
+    //         top = t;
+    // }
     // void in(node *t, std::vector<int> &preorder, std::vector<int> &inorder, std::vector<int> &postorder)
     // {
     //     if (!t)
@@ -91,7 +90,7 @@ public:
             }
         }
     }
-    void traverse()
+    void traverse(node *top)
     {
         std::vector<int> preorder;
         std::vector<int> inorder;
@@ -120,10 +119,9 @@ int main()
     node *n2 = new node(60);
     node *n3 = new node(50);
     node *n4 = new node(10);
-    b.insert(n);
-    b.insert(n1);
-    b.insert(n2);
-    b.insert(n3);
-    b.insert(n4);
-    b.traverse();
+    n->left = n1;
+    n1->left = n4;
+    n->right = n2;
+    n2->left = n3;
+    b.traverse(n);
 }
