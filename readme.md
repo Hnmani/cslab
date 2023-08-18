@@ -112,3 +112,101 @@ necessary modification of the data structure after each update. Justify the
 time complexity.<br>
   </li>
 </ul>
+
+<h2>Assignment 3</h2>
+<ul>
+
+<li>Given a binary tree, write a program to print all the nodes of the binary tree in
+Pre-order, Post-order, and In-order using only one stack traversal.</li>
+<li>Given the root of a binary tree, return the length of the diameter of the tree.
+Notes:
+The diameter of a binary tree is the length of the longest path between any two
+nodes in a tree. This path may or may not pass through the root.
+The length of a path between two nodes is represented by the number of edges
+between them.<br>
+Example: If the graph is as follows, the diameter can be [4,2,1,3] or [5,2,1,3].<br>
+Output: 3<br>
+</li>
+<li>There are n cities. Some of them are connected, while some are not. If city a is
+connected directly with city b and city b is connected directly with city c, then city a
+is connected indirectly with city c.<br>
+A province is a group of directly or indirectly connected cities and no other cities
+outside of the group.<br>
+You are given an n x n matrix where the entry will be 1 if the two cities are
+connected otherwise, 0.<br>
+Return the total number of provinces.<br>
+
+Input:<br>
+1 1 0 1 0 0<br>
+1 1 1 0 0 0<br>
+0 1 1 1 0 0<br>
+1 0 1 1 0 0<br>
+0 0 0 0 1 1<br>
+0 0 0 0 1 1<br>
+Output: 2<br>
+</li>
+<li>There is an integer array sorted in ascending order (with distinct values).
+The array can be rotated at a pivot index k (1 <= k < nums.length) such that the
+resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ...,
+nums[k-1]] (0-indexed).<br>
+For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become
+[4,5,6,7,0,1,2].<br>
+Given the array after the possible rotation and an integer target, return the index of
+the target if it is in the resultant array or -1 if it is not.<br>
+Propose an algorithm with O(log n) runtime complexity and write the program.<br>
+Input: nums = [4,5,6,7,0,1,2], target = 0<br>
+Output: 4<br>
+</li>
+</ul>
+
+<h2>Assignment 4</h2>
+<ul>
+<li>Write a program to find the maximum number of edges that can be added to a tree
+without violating the bipartite property.</li>
+<li>You are given an m x n integer array grid. There is a robot initially located at the
+top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner
+(i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in
+time.<br>
+An obstacle and space are marked as 1 or 0 respectively in the grid. A path that the
+robot takes cannot include any square that is an obstacle.<br>
+Write a program to return the number of possible unique paths that the robot can
+take to reach the bottom-right corner.</li>
+<li>You have planned some train travelling one year in advance. The days of the year in
+which you will travel are given as an integer array of days. Each day is an integer from
+1 to 365.<br>
+  
+Train tickets are sold in three different ways:<br>
+  
+  <ul>
+   <li> a 1-day pass is sold for costs[0] dollars,</li>
+   <li> a 7-day pass is sold for costs[1] dollars, and</li>
+   <li> a 30-day pass is sold for costs[2] dollars.</li>
+  </ul>
+
+The passes allow that many days of consecutive travel.<br>
+For example, if we get a 7-day pass on day 2, then we can travel for 7 days: 2, 3, 4, 5,
+6, 7, and 8.<br>
+Return the minimum number of dollars you need to travel every day in the given list
+of days.<br>
+Example<br>
+Input: days = [1,2,3,4,5,6,7,8,9,10,30,31], costs = [2,7,15]<br>
+Output: 17<br>
+
+Explanation: For example, here is one way to buy passes that lets you travel on your
+travel plan:<br>
+On day 1, you bought a 30-day pass for costs[2] = $15 which covered days 1, 2, ..., 30.<br>
+On day 31, you bought a 1-day pass for costs[0] = $2 which covered day 31.<br>
+In total, you spent $17 and covered all the days of your travel.<br>
+
+<li>Given an array arr of positive integers. Write a program to find the maximum length
+of a subsequence of the array which satisfies the following conditions:<br>
+  <ol>
+    <li>arr.length >= 3</li>
+<li>There exists some index i (0-indexed) with 0 < i < arr.length - 1 such that:
+<ol>
+ <li>arr[0] < arr[1] < ... < arr[i - 1] < arr[i]
+ <li>arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
+  </ol>
+   </li>
+</ol>
+</ul>
