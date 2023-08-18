@@ -112,3 +112,50 @@ necessary modification of the data structure after each update. Justify the
 time complexity.<br>
   </li>
 </ul>
+
+<h2>Assignment 3</h2>
+<ul>
+
+<li>Given a binary tree, write a program to print all the nodes of the binary tree in
+Pre-order, Post-order, and In-order using only one stack traversal.</li>
+<li>Given the root of a binary tree, return the length of the diameter of the tree.
+Notes:
+The diameter of a binary tree is the length of the longest path between any two
+nodes in a tree. This path may or may not pass through the root.
+The length of a path between two nodes is represented by the number of edges
+between them.<br>
+Example: If the graph is as follows, the diameter can be [4,2,1,3] or [5,2,1,3].<br>
+Output: 3<br>
+</li>
+<li>There are n cities. Some of them are connected, while some are not. If city a is
+connected directly with city b and city b is connected directly with city c, then city a
+is connected indirectly with city c.<br>
+A province is a group of directly or indirectly connected cities and no other cities
+outside of the group.<br>
+You are given an n x n matrix where the entry will be 1 if the two cities are
+connected otherwise, 0.<br>
+Return the total number of provinces.<br>
+
+Input:<br>
+1 1 0 1 0 0<br>
+1 1 1 0 0 0<br>
+0 1 1 1 0 0<br>
+1 0 1 1 0 0<br>
+0 0 0 0 1 1<br>
+0 0 0 0 1 1<br>
+Output: 2<br>
+</li>
+<li>There is an integer array sorted in ascending order (with distinct values).
+The array can be rotated at a pivot index k (1 <= k < nums.length) such that the
+resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ...,
+nums[k-1]] (0-indexed).<br>
+For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become
+[4,5,6,7,0,1,2].<br>
+Given the array after the possible rotation and an integer target, return the index of
+the target if it is in the resultant array or -1 if it is not.<br>
+Propose an algorithm with O(log n) runtime complexity and write the program.<br>
+Input: nums = [4,5,6,7,0,1,2], target = 0<br>
+Output: 4<br>
+</li>
+</ul>
+
