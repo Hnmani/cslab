@@ -159,3 +159,54 @@ Output: 4<br>
 </li>
 </ul>
 
+<h2>Assignment 4</h2>
+<ul>
+<li>Write a program to find the maximum number of edges that can be added to a tree
+without violating the bipartite property.</li>
+<li>You are given an m x n integer array grid. There is a robot initially located at the
+top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner
+(i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in
+time.<br>
+An obstacle and space are marked as 1 or 0 respectively in the grid. A path that the
+robot takes cannot include any square that is an obstacle.<br>
+Write a program to return the number of possible unique paths that the robot can
+take to reach the bottom-right corner.</li>
+<li>You have planned some train travelling one year in advance. The days of the year in
+which you will travel are given as an integer array of days. Each day is an integer from
+1 to 365.<br>
+  
+Train tickets are sold in three different ways:<br>
+  
+  <ul>
+   <li> a 1-day pass is sold for costs[0] dollars,</li>
+   <li> a 7-day pass is sold for costs[1] dollars, and</li>
+   <li> a 30-day pass is sold for costs[2] dollars.</li>
+  </ul>
+
+The passes allow that many days of consecutive travel.<br>
+For example, if we get a 7-day pass on day 2, then we can travel for 7 days: 2, 3, 4, 5,
+6, 7, and 8.<br>
+Return the minimum number of dollars you need to travel every day in the given list
+of days.<br>
+Example<br>
+Input: days = [1,2,3,4,5,6,7,8,9,10,30,31], costs = [2,7,15]<br>
+Output: 17<br>
+
+Explanation: For example, here is one way to buy passes that lets you travel on your
+travel plan:<br>
+On day 1, you bought a 30-day pass for costs[2] = $15 which covered days 1, 2, ..., 30.<br>
+On day 31, you bought a 1-day pass for costs[0] = $2 which covered day 31.<br>
+In total, you spent $17 and covered all the days of your travel.<br>
+
+<li>Given an array arr of positive integers. Write a program to find the maximum length
+of a subsequence of the array which satisfies the following conditions:<br>
+  <ol>
+    <li>arr.length >= 3</li>
+<li>There exists some index i (0-indexed) with 0 < i < arr.length - 1 such that:
+<ol>
+ <li>arr[0] < arr[1] < ... < arr[i - 1] < arr[i]
+ <li>arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
+  </ol>
+   </li>
+</ol>
+</ul>
