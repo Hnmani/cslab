@@ -37,7 +37,7 @@ int main()
     costs[0] = 0;
     for (int i = 1; i < 367; i++)
     {
-        if (i == days[j] && j < n)
+        if (j < n && i == days[j])
         {
             j++;
             int cost7 = 0;
