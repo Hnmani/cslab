@@ -65,5 +65,5 @@ int main()
         else
             even_node += levels[i].size();
     }
-    std::cout << (odd_node * even_node) - e;
+    std::cout << (odd_node * even_node) - e << std::endl;
 }

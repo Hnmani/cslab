@@ -54,5 +54,5 @@ int main()
             costs[i] = costs[i - 1];
         }
     }
-    std::cout << costs[366];
+    std::cout << costs[366] << std::endl;
 }

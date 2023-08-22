@@ -14,7 +14,7 @@ int main()
             visit_count[i][j] = 0;
         }
 
-    visit_count[0][0] = 1;
+    visit_count[0][0] = !arr[0][0];
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < M; j++)
