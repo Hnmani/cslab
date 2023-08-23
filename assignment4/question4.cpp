@@ -1,43 +1,69 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
 int main()
 {
-    int n;
+    int n, i, subSeqSize = 2, temp = 1, diff;
     std::cin >> n;
     int arr[n];
     for (int i = 0; i < n; i++)
-    {
         std::cin >> arr[i];
-    }
-
-    int peak = 0, bottom1 = arr[0], bottom2 = 0, mls = 0, pre = 0;
-
-    for (int i = 0; i < n; i++)
+    n = sizeof(arr) / sizeof(arr[0]);
+    bool flag = true; // true means ascending, false means descending
+    for (i = 0; i < n - 1; i++)
     {
-        if (arr[i] == arr[i + 1])
+        diff = arr[i + 1] - arr[i];
+        if (flag)
         {
-            bottom1 = i + 1;
-            peak = 0;
+            if (diff > 0)
+            {
+                temp++;
+            }
+            else if (diff == 0)
+            {
+                temp = 1;
+            }
+            else
+            {
+                temp++;
+                flag = false;
+            }
         }
-        if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1])
+        else
         {
-            peak = i;
+            if (diff < 0)
+            {
+                temp++;
+            }
+            else if (diff == 0)
+            {
+                if (temp > subSeqSize)
+                {
+                    subSeqSize = temp;
+                }
+                temp = 1;
+                flag = true;
+            }
+            else
+            {
+                if (temp > subSeqSize)
+                {
+                    subSeqSize = temp;
+                }
+                temp = 2;
+                flag = true;
+            }
         }
-        if (arr[i] < arr[i + 1] && peak)
-        {
-            bottom2 = i;
-            mls = bottom2 - bottom1 + 1;
-            bottom1 = i;
-            peak = 0;
-        }
-
-        if (pre < mls)
-            pre = mls;
     }
-    if (pre <= 2)
+    if (temp > subSeqSize)
     {
-        std::cout << 0 << std::endl;
+        subSeqSize = temp;
     }
+    std::cout << "The maximum length of a subsequence of the array is ";
+    if (subSeqSize != 2)
+        std::cout
+            << subSeqSize;
     else
-        std::cout << "The maximum length of a subsequence of the array is " << pre << std::endl;
+        std::cout << 0;
+    std::cout << std::endl;
+    return 0;
 }
