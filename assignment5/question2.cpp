@@ -17,7 +17,7 @@
  } 
  int main() 
  { 
-     std::set<string> st; 
+     std::set<std::string> st; 
      std::string S = ""; 
      std::cin >> S; 
      int res = maxUnique(S , st) ; 
