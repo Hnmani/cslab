@@ -18,7 +18,7 @@ int maxUnique(std::string S, std::set<std::string> &st)
 int main()
 {
     std::set<std::string> st;
-    std::string S = "";
+    std::string S;
     std::cin >> S;
     int res = maxUnique(S, st);
     std::cout << "the maximum number of unique substrings " << res << std::endl;
