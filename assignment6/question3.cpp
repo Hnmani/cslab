@@ -21,16 +21,16 @@ int getMaxProfitSolution(std::vector<int> &profit, std::vector<int> &workers, st
     int solution = 0;
     for (int i = 0; i < NUMBER_OF_WORKERS; i++)
     {
-        int max_profit = 0;
+        int maxProfit = 0;
         for (int j = 0; j < NUMBER_OF_JOBS; j++)
         {
             if (difficulty[j] <= workers[i])
             {
-                if (max_profit < profit[j])
-                    max_profit = profit[j];
+                if (maxProfit < profit[j])
+                    maxProfit = profit[j];
             }
         }
-        solution += max_profit;
+        solution += maxProfit;
     }
     return solution;
 }
