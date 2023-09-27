@@ -10,7 +10,7 @@ int main()
     for (int i = 0; i < n; i++)
         std::cin >> arr[i];
     int count = 0;
-    int index;
+    int index = n;
     for (int i = 0; i < n; i++)
     {
         if (count + arr[i] <= k)
