@@ -1,19 +1,20 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <vector>
+
 int main()
 {
     int n;
-    cout << "Enter number of rows & columns: ";
-    cin >> n;
-    vector<int> temp;
-    vector<vector<int>> res(n, vector<int>(n));
-    vector<vector<int>> trans(n, vector<int>(n));
-    vector<vector<int>> a(n, vector<int>(n));
+    std::cout << "Enter number of rows & columns: ";
+    std::cin >> n;
+    std::vector<int> temp;
+    std::vector<std::vector<int>> res(n, std::vector<int>(n));
+    std::vector<std::vector<int>> trans(n, std::vector<int>(n));
+    std::vector<std::vector<int>> a(n, std::vector<int>(n));
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            cin >> a[i][j];
+            std::cin >> a[i][j];
         }
     }
     for (int i = 0; i < n; i++)
@@ -58,8 +59,8 @@ int main()
     {
         for (int j = 0; j < n; j++)
         {
-            cout << res[i][j] << " ";
+            std::cout << res[i][j] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
