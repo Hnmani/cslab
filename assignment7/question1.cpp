@@ -1,51 +1,42 @@
 #include <iostream>
 #include <string>
-#include <vector>
-#include <unordered_set>
 
-void vecDecode(std::vector<int> &arr, std::unordered_set<std::string> &solutions, int i, std::string currString)
+class Solution
 {
-    int n = arr.size();
-    if (i >= n)
+public:
+    int countWays(std::string s, int n)
     {
-        solutions.insert(currString);
-        return;
+        int count[n + 1];
+        count[0] = 1;
+        count[1] = 1;
+        if (s[0] == '0')
+            return 0;
+        for (int i = 2; i <= n; i++)
+        {
+            count[i] = 0;
+            if (s[i - 1] > '0')
+                count[i] = count[i - 1];
+            if (s[i - 2] == '1' || (s[i - 2] == '2' && s[i - 1] < '7'))
+            {
+                count[i] += count[i - 2];
+            }
+        }
+        return count[n];
     }
-    if (arr[i] == 0)
-        return;
-    if (arr[i] == 1 && i < n - 1)
-    {
-        int num = arr[i] * 10 + arr[i + 1];
-        vecDecode(arr, solutions, i + 2, currString + (char)('A' + num - 1));
-    }
-    if (arr[i] == 2 && i < n - 1 && arr[i + 1] <= 6)
-    {
-        int num = arr[i] * 10 + arr[i + 1];
-        vecDecode(arr, solutions, i + 2, currString + (char)('A' + num - 1));
-    }
-    vecDecode(arr, solutions, i + 1, currString + (char)('A' + arr[i] - 1));
-}
 
-std::vector<int> strToVec(std::string str)
-{
-    std::vector<int> stv;
-    for (char c : str)
+public:
+    int numDecodings(std::string s)
     {
-        stv.push_back((int)(c - '0'));
+        return countWays(s, s.size());
     }
-    return stv;
-}
-
+};
 int main()
 {
-    std::string input;
-    std::cin >> input;
-    std::unordered_set<std::string> solutions;
-    std::vector<int> arr = strToVec(input);
-    vecDecode(arr, solutions, 0, "");
-    std::cout << "Total Number of ways to decode = " << solutions.size() << std::endl;
-    for (auto s : solutions)
-    {
-        std::cout << s << std::endl;
-    }
+    std::string s;
+    std::cout << "Enter the string to decode."
+              << " ";
+    std::cin >> s;
+    Solution soln;
+    int num = soln.numDecodings(s);
+    std::cout << "number of ways to decode it: " << num << std::endl;
 }
